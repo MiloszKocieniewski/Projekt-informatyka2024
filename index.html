@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symulator Zarządzania Czasem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Symulator Zarządzania Czasem Ucznia</h1>
+    </header>
+    <main>
+        <section class="ustawienia-czasu">
+            <h2>Ustawienia</h2>
+            <form id="formularz-ustawienia">
+                <label for="ustawiony-czas">Ustaw dostępny czas (minuty):</label>
+                <input type="number" id="ustawiony-czas" value="480" min="1" required>
+                <button type="submit">Zapisz ustawienia</button>
+            </form>
+        </section>
+
+        <section class="zarzadzanie-zadaniami">
+            <h2>Dodaj zadanie</h2>
+            <form id="formularz-zadanie">
+                <label for="nazwa-zadania">Nazwa zadania:</label>
+                <input type="text" id="nazwa-zadania" placeholder="Wprowadź nazwę zadania" required>
+                
+                <label for="czas-trwania">Czas trwania (minuty):</label>
+                <input type="number" id="czas-trwania" min="1" placeholder="Czas w minutach" required>
+                
+                <label for="priorytet-zadania">Priorytet:</label>
+                <select id="priorytet-zadania">
+                    <option value="niski">Niski</option>
+                    <option value="sredni">Średni</option>
+                    <option value="wysoki">Wysoki</option>
+                </select>
+                
+                <button type="submit">Dodaj zadanie</button>
+            </form>
+        </section>
+        
+        <section class="lista-zadan">
+            <h2>Lista zadań</h2>
+            <ul id="zadania"></ul>
+        </section>
+
+        <section class="podsumowanie">
+            <h2>Podsumowanie</h2>
+            <div class="dostepny-czas">
+                <h3>Dostępny czas: <span id="pozostaly-czas">480</span> minut</h3>
+                <div class="pasek-postepu">
+                    <div id="postep" style="width: 100%;"></div>
+                </div>
+            </div>
+            <p>Procent zrealizowanych zadań: <span id="procent-zadan">0</span>%</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
